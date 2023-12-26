@@ -11,7 +11,7 @@ export default function Footer() {
     navigation.navigate('Cart'); // Điều hướng đến màn hình sản phẩm
   };
   const navigateToHomeScreen = () => {
-    navigation.navigate('Home'); // Điều hướng đến màn hình sản phẩm
+    navigation.navigate('Home'); // Điều hướng đến màn hình sản phẩmdfrdhdhwgit add
   };
   return (
 
