@@ -8,7 +8,7 @@ export default function Footer() {
     navigation.navigate('Product'); // Điều hướng đến màn hình sản phẩm
   };
   const navigateToCartScreen = () => {
-    navigation.navigate('Cart'); // Điều hướng đến màn hình sản phẩmjjjk
+    navigation.navigate('Cart'); // Điều hướng đến màn hình sản phẩmjjjkjjj
   };
   const navigateToHomeScreen = () => {
     navigation.navigate('Home'); // Điều hướng đến màn hình sản phẩmdfrdhdhwgit
