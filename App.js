@@ -10,6 +10,7 @@ import Product from './pages/Product';
 import Cart from './pages/Cart';
 import { CartProvider } from './pages/CartContext';
 import ProductDetail from './pages/ProductDetail';
+import Order from './pages/Order';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ export default function App() {
           <Stack.Screen name="Product" component={Product} />
           <Stack.Screen name="Cart" component={Cart} />
           <Stack.Screen name="ProductDetail" component={ProductDetail} />
+          <Stack.Screen name="Order" component={Order} />
         </Stack.Navigator>
       </CartProvider>
     </NavigationContainer>

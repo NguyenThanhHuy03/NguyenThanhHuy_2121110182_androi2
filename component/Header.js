@@ -1,6 +1,7 @@
 import React from 'react';
 import { StatusBar, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome'; // hoặc bất kỳ bộ icon nào bạn muốn sử dụng
 
 export default function Header() {
   const navigation = useNavigation();
@@ -22,7 +23,6 @@ export default function Header() {
         <Text style={styles.navItem} onPress={navigateToHomeScreen}>Trang chủ</Text>
         <Text style={styles.navItem} onPress={navigateToProductScreen}>Sản phẩm</Text>
       </View>
-      
       <View style={styles.actions}>
         <Text style={styles.action}>Tìm kiếm</Text>
         <Text style={styles.action} onPress={navigateToCartScreen}>Giỏ hàng</Text>
@@ -60,6 +60,5 @@ const styles = StyleSheet.create({
   },
   action: {
     marginLeft: 20,
-    color: 'blue', // Màu sắc của các nút hoặc chức năng
   },
 });

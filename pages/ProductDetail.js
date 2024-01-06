@@ -2,16 +2,23 @@ import React, { useEffect, useState, useContext } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import { CartContext } from './CartContext';
+import { useNavigation } from '@react-navigation/native'; // Import hook điều hướng
 
 export default function ProductDetail({ route }) {
   const { productId } = route.params;
   const [product, setProduct] = useState(null);
   const { addToCart } = useContext(CartContext);
+  const navigation = useNavigation(); // Sử dụng hook navigation
+  const [isPurchased, setIsPurchased] = useState(false); // Trạng thái mua hàng
   const handleAddToCart = () => {
     addToCart(product);
     alert(`Added ${product.title} to Cart`);
   };
-
+  const handleBuyNow = () => {
+    setIsPurchased(true);
+    // Điều hướng sang trang Order khi mua hàng thành công
+    navigation.navigate('Order', { product });
+  };
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
@@ -40,7 +47,7 @@ export default function ProductDetail({ route }) {
           </TouchableOpacity>
 
           {/* Buy Now button */}
-          <TouchableOpacity style={[styles.button, { backgroundColor: 'blue' }]}>
+          <TouchableOpacity onPress={handleBuyNow} style={[styles.button, { backgroundColor: 'blue' }]}>
             <Text style={[styles.buttonText, { color: 'white' }]}>Buy Now</Text>
           </TouchableOpacity>
         </View>

@@ -13,8 +13,11 @@ export const CartProvider = ({ children }) => {
     updatedCart.splice(index, 1);
     setCartItems(updatedCart);
   };
+  const clearCart = () => {
+    setCartItems([]);
+  };
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart }}>
       {children}
     </CartContext.Provider>
   );
