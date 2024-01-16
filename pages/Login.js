@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, Button } from 'react-native';
+import { Text, View, TextInput, Button, TouchableOpacity, StyleSheet } from 'react-native';
 
 export class Login extends Component {
   constructor(props) {
@@ -19,6 +19,13 @@ export class Login extends Component {
     // Ví dụ: this.props.handleLogin(username, password);
   };
 
+  handleSignUp = () => {
+    // Xử lý khi nhấn vào liên kết "Tạo tài khoản"
+    console.log('Navigate to SignUp');
+    // Thực hiện điều hướng đến màn hình đăng ký
+   this.props.navigation.navigate('Signup');
+  };
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -27,19 +34,37 @@ export class Login extends Component {
           placeholder="Username"
           onChangeText={(username) => this.setState({ username })}
           value={this.state.username}
-          style={{ borderWidth: 1, width: 200, margin: 10, padding: 5 }}
+          style={styles.input}
         />
         <TextInput
           placeholder="Password"
           onChangeText={(password) => this.setState({ password })}
           value={this.state.password}
           secureTextEntry={true}
-          style={{ borderWidth: 1, width: 200, margin: 10, padding: 5 }}
+          style={styles.input}
         />
         <Button title="Login" onPress={this.handleLogin} />
+
+        {/* Dòng chữ màu xanh tới Signup */}
+        <TouchableOpacity onPress={this.handleSignUp}>
+          <Text style={styles.signUpLink}>Tạo tài khoản ?</Text>
+        </TouchableOpacity>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  input: {
+    borderWidth: 1,
+    width: 200,
+    margin: 10,
+    padding: 5,
+  },
+  signUpLink: {
+    color: 'blue',
+    marginTop: 10,
+  },
+});
 
 export default Login;

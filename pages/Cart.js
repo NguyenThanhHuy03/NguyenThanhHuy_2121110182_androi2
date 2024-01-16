@@ -10,14 +10,14 @@ export default function Cart() {
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => {
       if (item.price && !isNaN(item.price)) {
-        return total + item.price; // Giả sử số lượng là 1 cho mỗi sản phẩm
+        return total + item.price; // Giả sử số lượng là 1 cho mỗi sản phẩm 
       }
       return total;
     }, 0).toFixed(2);
   };
 
   const handlePaymentSuccess = () => {
-    setIsPaymentSuccess(true); 
+    setIsPaymentSuccess(true);
     clearCart();
   };
 
@@ -25,7 +25,6 @@ export default function Cart() {
   const renderCartItem = ({ item, index }) => (
     <View>
       <View style={styles.itemContainer}>
-        {/* Hiển thị thông tin sản phẩm */}
         <Image source={{ uri: item.image }} style={styles.itemImage} />
         <View style={styles.itemInfo}>
           <Text style={styles.itemTitle}>{item.title}</Text>
@@ -33,7 +32,6 @@ export default function Cart() {
           <TouchableOpacity onPress={() => removeFromCart(index)} style={styles.deleteButton}>
             <Text style={styles.deleteButtonText}>xoá</Text>
           </TouchableOpacity>
-          {/* Các thông tin khác của sản phẩm */}
         </View>
       </View>
       {!isPaymentSuccess && index === cartItems.length - 1 && (

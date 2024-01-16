@@ -11,6 +11,13 @@ import Cart from './pages/Cart';
 import { CartProvider } from './pages/CartContext';
 import ProductDetail from './pages/ProductDetail';
 import Order from './pages/Order';
+import Category_jewelery from './pages/categories/Category_jewelery';
+import Category from './pages/categories/Category';
+import Category_electronics from './pages/categories/Category_electronics';
+import Category_men from './pages/categories/Category_men';
+import Category_women from './pages/categories/Category_women';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +31,13 @@ export default function App() {
           <Stack.Screen name="Cart" component={Cart} />
           <Stack.Screen name="ProductDetail" component={ProductDetail} />
           <Stack.Screen name="Order" component={Order} />
+          <Stack.Screen name="Category" component={Category} />
+          <Stack.Screen name="Category_jewelery" component={Category_jewelery} />
+          <Stack.Screen name="Category_electronics" component={Category_electronics} />
+          <Stack.Screen name="Category_men" component={Category_men} />
+          <Stack.Screen name="Category_women" component={Category_women} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Signup" component={Signup} />
         </Stack.Navigator>
       </CartProvider>
     </NavigationContainer>

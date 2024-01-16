@@ -1,66 +1,67 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
-export default function Footer() {
+
+export default function BottomNavBar() {
   const navigation = useNavigation();
 
-  const navigateToProductScreen = () => {
-    navigation.navigate('Product'); // Điều hướng đến màn hình sản phẩm
-  };
-  const navigateToCartScreen = () => {
-    navigation.navigate('Cart'); // Điều hướng đến màn hình sản phẩmjjjkjjj
-  };
   const navigateToHomeScreen = () => {
-    navigation.navigate('Home'); // Điều hướng đến màn hình sản phẩmdfrdhdhwgit
+    navigation.navigate('Home');
+  };
+
+  const navigateToProductScreen = () => {
+    navigation.navigate('Product');
+  };
+
+  const navigateToCartScreen = () => {
+    navigation.navigate('Cart');
+  };
+
+  const navigateToCategoryScreen = () => {
+    navigation.navigate('Category');
+  };
+
+  const navigateToLoginScreen = () => {
+    navigation.navigate('Login');
   };
   return (
-
-    <View style={styles.footer}>
-      {/* Các liên kết điều hướng */}
-      <View style={styles.nav}>
-        <TouchableOpacity style={styles.navItem} onPress={navigateToHomeScreen}>
-          <Text>Trang chủ</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem} onPress={navigateToProductScreen}>
-          <Text >Sản phẩm</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem} onPress={navigateToCartScreen}>
-          <Text>Giỏ hàng</Text>
-        </TouchableOpacity>
-        {/* Thêm các liên kết điều hướng khác tùy thuộc vào ứng dụng của bạn */}
-      </View>
-
-      {/* Thông tin liên hệ */}
-      <View style={styles.contactInfo}>
-        <Text style={styles.contactText}>Liên hệ:</Text>
-        <Text style={styles.contactText}>Địa chỉ: Số 123, Đường ABC, Thành phố XYZ</Text>
-        <Text style={styles.contactText}>Email: contact@example.com</Text>
-        {/* Thêm các thông tin liên hệ khác tùy thuộc vào ứng dụng của bạn */}
-      </View>
+    <View style={styles.bottomNavBar}>
+      <TouchableOpacity style={styles.navItem} onPress={navigateToHomeScreen}>
+        <Icon name="home" size={24} color="black" />
+        <Text>Trang chủ</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.navItem} onPress={navigateToProductScreen}>
+        <Icon name="shopping-bag" size={24} color="black" />
+        <Text>Sản phẩm</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.navItem} onPress={navigateToCategoryScreen}>
+        <Icon name="th-large" size={24} color="black" />
+        <Text>Danh mục</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.navItem} onPress={navigateToCartScreen}>
+        <Icon name="shopping-cart" size={24} color="black" />
+        <Text>Giỏ hàng</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.navItem} onPress={ navigateToLoginScreen}>
+        <Icon name="user" size={24} color="black" />
+        <Text>Tài khoản</Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  footer: {
-    backgroundColor: '#f0f0f0',
-    paddingVertical: 20,
-    paddingHorizontal: 100,
-  },
-  nav: {
+  bottomNavBar: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 20,
+    alignItems: 'center',
+    backgroundColor: '#f0f0f0',
+    height: 60,
   },
   navItem: {
     flex: 1,
     alignItems: 'center',
-  },
-  contactInfo: {
-    alignItems: 'center',
-  },
-  contactText: {
-    marginBottom: 5,
-    textAlign: 'center',
+    justifyContent: 'center',
   },
 });

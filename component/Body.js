@@ -43,33 +43,40 @@ export default function Home() {
   );
 }
 
+// ...
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 20,
     backgroundColor: '#fff',
   },
-  productItem: {
+  heading: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  productContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
     paddingVertical: 10,
+    paddingHorizontal: 20, // Thêm padding ngang
   },
   productImage: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     resizeMode: 'cover',
     marginRight: 15,
   },
-  productInfo: {
-    flex: 1,
-  },
-  productName: {
-    fontSize: 16,
-    fontWeight: 'bold',
+  productTitle: {
+    fontSize: 18,
+    marginBottom: 5,
   },
   productPrice: {
-    fontSize: 14,
+    fontSize: 16,
     color: 'green',
   },
 });
+
