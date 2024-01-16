@@ -25,7 +25,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <CartProvider>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="Login" >
+        <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Product" component={Product} />
           <Stack.Screen name="Cart" component={Cart} />
@@ -36,7 +37,6 @@ export default function App() {
           <Stack.Screen name="Category_electronics" component={Category_electronics} />
           <Stack.Screen name="Category_men" component={Category_men} />
           <Stack.Screen name="Category_women" component={Category_women} />
-          <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
         </Stack.Navigator>
       </CartProvider>

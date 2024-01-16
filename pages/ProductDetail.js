@@ -28,7 +28,6 @@ export default function ProductDetail({ route }) {
         console.error('Error fetching product details:', error);
       }
     };
-
     fetchProductDetails();
   }, [productId]);
 
