@@ -27,6 +27,7 @@ export default function Home() {
   return (
     <ScrollView style={styles.container}>
       {products.map((product) => (
+        
         <TouchableOpacity
           style={styles.productItem}
           onPress={() => navigateToProductDetail(product.id)}
@@ -38,6 +39,7 @@ export default function Home() {
             <Text style={styles.productPrice}>${product.price}</Text>
           </View>
         </TouchableOpacity>
+
       ))}
     </ScrollView>
   );
@@ -51,24 +53,23 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#fff',
   },
-  heading: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  productContainer: {
-    flexDirection: 'row',
+  productItem: {
+    flexDirection: 'row', /* Hiển thị sản phẩm trên cùng một hàng */
     alignItems: 'center',
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
     paddingVertical: 10,
-    paddingHorizontal: 20, // Thêm padding ngang
+    paddingHorizontal: 20, /* Thêm padding ngang */
+    marginBottom: 10, /* Thêm khoảng trắng dưới sản phẩm */
   },
   productImage: {
     width: 100,
     height: 100,
     resizeMode: 'cover',
     marginRight: 15,
+  },
+  productInfo: {
+    flex: 1,
   },
   productTitle: {
     fontSize: 18,

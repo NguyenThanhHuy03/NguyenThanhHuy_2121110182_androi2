@@ -18,6 +18,7 @@ import Category_men from './pages/categories/Category_men';
 import Category_women from './pages/categories/Category_women';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import User from './pages/User';
 
 const Stack = createStackNavigator();
 
@@ -38,6 +39,7 @@ export default function App() {
           <Stack.Screen name="Category_men" component={Category_men} />
           <Stack.Screen name="Category_women" component={Category_women} />
           <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen name="User" component={User} />
         </Stack.Navigator>
       </CartProvider>
     </NavigationContainer>
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    
     justifyContent: 'center',
   },
 });

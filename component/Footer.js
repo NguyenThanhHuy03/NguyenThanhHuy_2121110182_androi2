@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 
+
 export default function BottomNavBar() {
   const navigation = useNavigation();
 
@@ -25,6 +26,9 @@ export default function BottomNavBar() {
   const navigateToLoginScreen = () => {
     navigation.navigate('Login');
   };
+  const navigateToUserScreen = () => {
+    navigation.navigate('User');
+  };
   return (
     <View style={styles.bottomNavBar}>
       <TouchableOpacity style={styles.navItem} onPress={navigateToHomeScreen}>
@@ -43,7 +47,7 @@ export default function BottomNavBar() {
         <Icon name="shopping-cart" size={24} color="black" />
         <Text>Giỏ hàng</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.navItem} onPress={ navigateToLoginScreen}>
+      <TouchableOpacity style={styles.navItem} onPress={ navigateToUserScreen}>
         <Icon name="user" size={24} color="black" />
         <Text>Tài khoản</Text>
       </TouchableOpacity>

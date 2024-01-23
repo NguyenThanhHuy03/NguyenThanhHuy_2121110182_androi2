@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
     import { Image, Keyboard, Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
     import  Icon  from 'react-native-vector-icons/FontAwesome';
-
+    import { useNavigation } from '@react-navigation/native';
     const Login = ( {navigation} ) => {
         const [useremail, setUserEmail] = React.useState('');
         const [password, setPassWord] = React.useState('');
+        
 
+        const navigateToSignupScreen = () => {
+          navigation.navigate('Signup');
+        };
+      
 
         const formSignIn = () => {
             Keyboard.dismiss();
@@ -105,6 +110,15 @@ import React, { useState } from 'react';
                                                     <Text style={{color: 'white'}}>Login</Text>
                                                 </View>
                                             </TouchableHighlight>
+                                    </View>
+                                    
+                                    </TouchableOpacity>
+                                    <TouchableOpacity>
+                                    <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                                        <Text style={{color: 'black', textDecorationLine: 'underline'}}
+                                            onPress={navigateToSignupScreen}>
+                                            Tạo tài khoản?
+                                        </Text>
                                     </View>
                                     </TouchableOpacity>
                                 </View>
